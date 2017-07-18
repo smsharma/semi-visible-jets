@@ -3,14 +3,14 @@
 This repo contains files necessary for generation of semi-visible jet Monte Carlo signal events in `MadGraph`. 
 UFO files associated with two UV completions are provided:
 
-### `DMsimp_s_spin1`
+### s-channel production
 
-An s-channel production mediated through a new heavy Z'. The model provided is a modified version of the spin-1 `DMsimp` model (http://feynrules.irmp.ucl.ac.be/wiki/DMsimp) 
+An s-channel production (`DMsimp_s_spin1`) mediated through a new heavy Z'. The model provided is a modified version of the spin-1 `DMsimp` model (http://feynrules.irmp.ucl.ac.be/wiki/DMsimp) 
 implemented through `FeynRules`.
 
-### `DMsimp_tchannel`
+### t-channel production
 
-A t-channel production where the dark and visible sectors interact through a new scalar bi-fundamental.
+A t-channel production (`DMsimp_tchannel`) where the dark and visible sectors interact through a new scalar bi-fundamental.
 
 The bi-fundamentals are denoted with `su11, su12, su21, su22...`, where `u` etc explicitly specifies the QCD flavour index 
 and the numbers are the explicit dark non-Abelian group indices.
