@@ -1,4 +1,0 @@
-P1_qq_gv11gv11x
-P1_qq_gv12gv12x
-P1_qq_gv21gv21x
-P1_qq_gv22gv22x
