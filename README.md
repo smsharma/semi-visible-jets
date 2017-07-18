@@ -8,7 +8,21 @@ implemented through `FeynRules`.
 
 - `DMsimp_tchannel`: A t-channel production where the dark and visible sectors interact through a new scalar bi-fundamental.
 
-## t-channel
+The bi-fundamentals are denoted with `su11, su12, su21, su22`, where `u` explicitly specified the QCD flavour index 
+and the numbers are the explicit dark non-Abelian group charges.
+
+## Example `MadGraph` production
+
+- Inclusive s-channel production:
+```
+import DMsimp_s_spin1
+define j = g u c t d b s g u~ c~ t~ d~ b~ s~
+generate p p > xd xd~
+add process p p > xd xd~ j
+add process p p > xd xd~ j j
+output sig_schannel
+```
+- Inclusive t-channel production:
 ```
 import DMsimp_tchannel
 define gv = gv11 gv12 gv21 gv22
@@ -20,13 +34,3 @@ add process p p > gv gv~ j j
 output sig_tchannel
 ```
 
-## s-channel
-
-```
-import DMsimp_s_spin1
-define j = g u c t d b s g u~ c~ t~ d~ b~ s~
-generate p p > xd xd~
-add process p p > xd xd~ j
-add process p p > xd xd~ j j
-output sig_schannel
-```
