@@ -1,4 +1,4 @@
-# SemivisibleJets
+# Semi-visible Jets
 
 [![arXiv](https://img.shields.io/badge/arXiv-1707.05326%20-green.svg)](https://arxiv.org/abs/1707.05326)
 
@@ -50,7 +50,7 @@ add process p p > gv gv~ j j
 output sig_tchannel
 ```
 
-## Contacts
+## Contact
 
 For questions or issues please contact:
 
