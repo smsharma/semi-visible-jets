@@ -1,4 +1,4 @@
-(***************** This is the FeynRules model file for QCD, with three flavors ************************)
+(***************** This is the FeynRules model file for QCD-inspired t-channel dark quark production ************************)
 
 M$ModelName = "Semivisible";
 
