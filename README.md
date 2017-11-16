@@ -50,6 +50,28 @@ add process p p > gv gv~ j j
 output sig_tchannel
 ```
 
+## Note on hadronization with `PYTHIA`
+
+As noted above, a recent version of `PYTHIA` (> 8.226) including the Hidden Valley (HV) module 
+and running of the dark coupling is required when implementing the subsequent dark hadronization.
+
+In order to be able to use the HV module, the PDG IDs of the dark particles must be changed in the LHE files
+for `PYTHIA` to be 
+able to recognize and shower these properly. This can be done as follows:
+
+- For the s-channel model
+```
+sed -i 's/5000521/4900101/g' <LHE filename>
+```
+- For the t-channel model
+```
+sed -i 's/49001010/4900101/g' <LHE filename>	
+sed -i 's/49001011/4900101/g' <LHE filename>	
+sed -i 's/49001012/4900101/g' <LHE filename>	
+sed -i 's/49001013/4900101/g' <LHE filename>	
+sed -i 's/49001014/4900101/g' <LHE filename>	
+```
+
 ## Contact
 
 For questions or issues please contact:
