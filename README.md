@@ -2,6 +2,8 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-1707.05326%20-green.svg)](https://arxiv.org/abs/1707.05326)
 
+> ⚠️ **Discalimer**: The contents of this repository are outdated and no longer maintained. While they may provide a useful starting point, the files here should not be used in production as is. See notes below for known issues. [This fork](https://github.com/eshwen/SemivisibleJets/) may contain more up-to-date files and instructions for event generation.
+
 This repository contains model files necessary for generation of semi-visible jet Monte Carlo signal events in `MadGraph`. 
 Please see [1707.05326](https://arxiv.org/abs/1707.05326) and [1503.00009](https://arxiv.org/abs/1503.00009) for
 for further details. Please note that a recent version of `PYTHIA` (> 8.226) including the Hidden Valley module 
@@ -9,23 +11,33 @@ and running of the dark coupling is required when implementing the subsequent da
 
 UFO files associated with two UV completions are provided:
 
-### s-channel production
+## s-channel production
 
 An s-channel production (`DMsimp_s_spin1`) mediated through a new heavy Z'. The model provided is a modified version of the spin-1 `DMsimp` model (http://feynrules.irmp.ucl.ac.be/wiki/DMsimp) 
 implemented through `FeynRules`.
 
-### t-channel production
+## t-channel production
 
 A t-channel production (`DMsimp_tchannel`) where the dark and visible sectors interact through a new scalar bi-fundamental.
 
 The bi-fundamentals are denoted with `su11, su12, su21, su22...`, where `u` etc explicitly specifies the QCD flavour index 
 and the numbers are the explicit dark non-Abelian group indices. Similarly, the dark quarks are labeled as `qv11, qv12, qv21, qv22`.
 
+A `FeynRules` model file (`DMsimp_tchannel.fr`) as well as the `Mathematica` notebook (`DMsimp_tchannel.nb`) used to generated the UFO output 
+are also provided.
+
+### Notes on event generation with the t-channel mediator
+
 Please note that a modified version of `MadGraph` using the patch included [here](https://bugs.launchpad.net/mg5amcnlo/+bug/1702712) 
 is required to ensure a stable cross section for event generation using this model.
 
-A `FeynRules` model file (`DMsimp_tchannel.fr`) as well as the `Mathematica` notebook (`DMsimp_tchannel.nb`) used to generated the UFO output 
-are also provided.
+Additionally, the `param_card.dat` generated while running t-channel production may assumed a fixed width for the mediator, which may not be desired. In this case, the `param_card.dat` can be manually modified as follows (see [here](https://answers.launchpad.net/mg5amcnlo/+question/215238) for discussion):
+```
+DECAY 9000005 Auto
+DECAY 9000006 Auto
+...
+DECAY 9000028 Auto
+```
 
 ## Example `MadGraph` production
 
@@ -52,7 +64,7 @@ output sig_tchannel
 
 ## Note on hadronization with `PYTHIA`
 
-As noted above, a recent version of `PYTHIA` (> 8.226) including the Hidden Valley (HV) module 
+As noted above, a recent version of `PYTHIA` (>~ 8.226) including the Hidden Valley (HV) module 
 and running of the dark coupling is required when implementing the subsequent dark hadronization.
 
 In order to be able to use the HV module, the PDG IDs of the dark particles must be changed in the LHE files
