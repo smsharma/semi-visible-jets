@@ -2,7 +2,7 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-1707.05326%20-green.svg)](https://arxiv.org/abs/1707.05326)
 
-> ⚠️ **Discalimer**: The contents of this repository are outdated and no longer maintained. While they may provide a useful starting point, the files here should not be used in production as is. See notes below for known issues. [This fork](https://github.com/eshwen/SemivisibleJets/) may contain more up-to-date files and instructions for event generation.
+> ⚠️  **Discalimer**: The contents of this repository are outdated and no longer maintained. While they may provide a useful starting point, the files here should not be used in production as is. See notes below for known issues. [This fork](https://github.com/eshwen/SemivisibleJets/) may contain more up-to-date files and instructions for event generation.
 
 This repository contains model files necessary for generation of semi-visible jet Monte Carlo signal events in `MadGraph`. 
 Please see [1707.05326](https://arxiv.org/abs/1707.05326) and [1503.00009](https://arxiv.org/abs/1503.00009) for
@@ -31,7 +31,7 @@ are also provided.
 Please note that a modified version of `MadGraph` using the patch included [here](https://bugs.launchpad.net/mg5amcnlo/+bug/1702712) 
 is required to ensure a stable cross section for event generation using this model.
 
-Additionally, the `param_card.dat` generated while running t-channel production may assumed a fixed width for the mediator, which may not be desired. In this case, the `param_card.dat` can be manually modified as follows to automatically compute the mediator width (see [here](https://answers.launchpad.net/mg5amcnlo/+question/215238) for discussion):
+Additionally, the `param_card.dat` generated while running t-channel production may assume a fixed width for the mediator, which may not be desired. In this case, the `param_card.dat` can be manually modified as follows to automatically compute the mediator width (see [here](https://answers.launchpad.net/mg5amcnlo/+question/215238) for discussion):
 ```
 DECAY 9000005 Auto
 DECAY 9000006 Auto
